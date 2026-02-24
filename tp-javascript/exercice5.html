@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TP JavaScript</title>
+  </head>
+  <body>
+    <h1>Exercice 5</h1>
+    <h1>Ma fiche de présentation</h1>
+    <p id="nomComplet">...</p>
+    <p id="age">...</p>
+    <p id="ville">...</p>
+    <p id="presentation">...</p>
+
+    <script>
+      let prenom;
+      do {
+        prenom = prompt("Quel est votre prénom ?");
+      } while (prenom == null || prenom == "" || !isNaN(prenom));
+
+      document.title = "Fiche de " + prenom;
+
+      let nom;
+      do {
+        nom = prompt("Quel est votre nom ?");
+      } while (nom == null || nom == "" || !isNaN(nom));
+
+      let age;
+      do {
+        age = Number(prompt("Quel est votre âge ?"));
+      } while (age == null || age == 0);
+
+      let ville;
+      do {
+        ville = prompt("Quel est votre ville ?");
+      } while (ville == null || ville == "" || !isNaN(ville));
+
+      document.getElementById("nomComplet").innerHTML =
+        `Prénom NOM: ${prenom} ${nom.toUpperCase()}`;
+
+      document.getElementById("age").innerHTML = `Age: ${age}`;
+      document.getElementById("ville").innerHTML = `Ville: ${ville}`;
+
+      document.getElementById("presentation").innerHTML =
+        `Je m'appelle ${prenom} ${nom.toUpperCase()}, j'ai ${age} ans et j'habite à ${ville.toUpperCase()}.`;
+    </script>
+  </body>
+</html>

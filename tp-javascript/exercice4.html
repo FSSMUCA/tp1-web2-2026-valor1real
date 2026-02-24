@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>TP JavaScript</title>
+  </head>
+  <body>
+    <h1>Exercice 4</h1>
+    <!-- Votre contenu HTML ici -->
+
+    <script>
+      let prenom;
+      do {
+        prenom = prompt("Quel est votre prénom ?");
+      } while (prenom == null || prenom == "" || !isNaN(prenom));
+
+      let age;
+      do {
+        age = Number(prompt("Quel est votre âge ?"));
+      } while (age == null || age == 0);
+
+      let anneeNaissance = 2025 - age;
+
+      alert(`Bonjour ${prenom} ! Vous êtes né(e) vers ${anneeNaissance}.`);
+
+      if (confirm("Afficher dans la console ?")) {
+        console.log(
+          `prénom: ${prenom}, âge: ${age} et année de naissance: ${anneeNaissance}`,
+        );
+      }
+    </script>
+  </body>
+</html>
